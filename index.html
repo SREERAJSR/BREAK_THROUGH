@@ -71,7 +71,7 @@
         }
 
         a:hover {
-            background-color: blue
+            background-color: blue;
         }
 
         @media (max-width: 768px) {
@@ -100,15 +100,39 @@
 <body>
     <div class="container">
         <h1>Dear <span style="color: #e65a50;">Sunkudu,</span></h1>
-        <p>This perfume is a small piece of me, and every time you wear it, I hope it reminds you of the moments we’ve shared.</p>
-        <p>Sunkuu please use your earphones to listen to the song and take a moment to read
-        the card. You’ll find hidden memories and feelings that I’ve kept for you in every word</p>
-
+        <audio id="song" src="./Vaanam.mp3" preload="auto"></audio>
+        <p>This perfume is a small piece of me, and every time you smell it, I hope it reminds you of the moments we’ve
+            shared.</p>
+        <p>Sunkuu please use your earphones to listen to the song and take a moment to read the card. You’ll find hidden
+            memories and feelings that I’ve kept for you in every word.</p>
         <p>It’s my way of sharing a part of me, even when I’m not around.</p>
-        <p>With love,</p>
-        <p><b>Sree</b></p>
+        <p style="text-align: center;"><b>With love by <br> Hey Siri..</b></p>
         <a href="https://music.youtube.com/watch?v=8gPO7jbEjtY" target="_blank">Play the Song</a>
     </div>
+
+    <script>
+        // Get the audio element
+        const audio = document.getElementById('song');
+
+        // Variable to track whether the audio is playing or paused
+        let isPlaying = false;
+
+        // Function to toggle play and pause
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();  // Pause the audio
+                isPlaying = false; // Update the status
+            } else {
+                audio.play();  // Play the audio
+                isPlaying = true; // Update the status
+            }
+        }
+
+        // Event listener to toggle play/pause on click or touch
+        document.body.addEventListener('click', function () {
+            toggleAudio();  // Call the function to toggle play/pause
+        });
+    </script>
 </body>
 
 </html>
